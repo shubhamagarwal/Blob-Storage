@@ -2,7 +2,7 @@
 import { BlobServiceClient} from '@azure/storage-blob';
 
 const sasToken = process.env.storagesastoken || "sv=2020-02-10&ss=bfqt&srt=sco&sp=rwdlacuptfx&se=2021-05-28T16:49:40Z&st=2021-05-24T08:49:40Z&spr=https&sig=Ce0EinaxClvGkB71InL%2B2IEjAfd0gMsiqnNfo9wCRr8%3D"; // Fill string with your SAS token
-const containerName = `moduleimports`;
+const containerName = `importfiles`;
 const storageAccountName = process.env.storageresourcename || "storagename"; // Fill string with your Storage resource name
 
 // Feature flag - disable storage feature to app if not configured
