@@ -17,8 +17,6 @@ const getBlobsInContainer = async (containerClient) => {
   // get list of blobs in container
   // eslint-disable-next-line
   for await (const blob of containerClient.listBlobsFlat()) {
-    console.log('blob',blob);
-    console.log('containerClient.listBlobsFlat()',containerClient.listBlobsFlat());
     // if image is public, just construct URL
     returnedBlobUrls.push(
       `https://${storageAccountName}.blob.core.windows.net/${containerName}/${blob.name}`
@@ -49,7 +47,6 @@ const uploadFileToBlob = async (file) => {
   const blobService = new BlobServiceClient(
     `https://${storageAccountName}.blob.core.windows.net/?${sasToken}`
   );
-    console.log('blobService', blobService);
   // get Container - full public read access
   const containerClient = blobService.getContainerClient(containerName);
 
